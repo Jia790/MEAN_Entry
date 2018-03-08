@@ -48,7 +48,7 @@ router.post('/returnQuotes', function(req, res, next){
 router.post('/removeQuote', function(req, res, next){
   
   Quote.removeQuoteById(req.body.id, function(err, quote){
-     console.log(req.body.id);
+     //console.log(req.body.id);
     if(err){
       console.log(err);
       res.json({success: false, msg:'Failed to removed quote'});

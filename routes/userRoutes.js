@@ -88,6 +88,7 @@ router.post('/authenticate', function(req, res, next){
 });
 
 //Profile 
+// passport.authenticate return the authenticated user back in req
 router.get('/profile', passport.authenticate('jwt', {session: false}), function(req, res, next){
 
   res.json({user: req.user});

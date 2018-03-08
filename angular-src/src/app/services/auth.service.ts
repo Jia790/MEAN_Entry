@@ -8,7 +8,11 @@ export class AuthService {
 
   authToken: any;
   user: any;
-  userId: any;
+  // proof of concept, preparing for migration to quote service file
+  temp: any = JSON.parse(localStorage.getItem('user'));
+  userID: any = this.temp.id;
+
+
 
   constructor(private http: Http) { }
 
@@ -37,7 +41,7 @@ export class AuthService {
     getProfile() {
       const headers = new Headers();
       this.loadToken(); // get the token from local storage
-      headers.append('Authorization', this.authToken); // send token to endpoint
+      headers.append('Authorization', this.authToken); // send token to endpoint for authorization
       headers.append('Content-Type' , 'application/json' );
       return this.http.get('http://localhost:3001/user/profile', {headers: headers}).map(res => res.json());
     }
@@ -61,9 +65,11 @@ export class AuthService {
     // Quote functions
     // pass id from user of profile to function to show quotes posted by this user
     getQuote(userid) {
+      console.log(this.userID); // proof of concept, preparing for migration to quote service file
+      const UID = {id : this.userID}; // proof of concept, preparing for migration to quote service file
       const headers = new Headers();
       headers.append('Content-Type' , 'application/json' );
-      return this.http.post('http://localhost:3001/quote/returnQuotes', userid , {headers: headers}).map(res => res.json());
+      return this.http.post('http://localhost:3001/quote/returnQuotes', UID , {headers: headers}).map(res => res.json());
     }
 
         // pass id from user of profile to function remove quote posted by this user

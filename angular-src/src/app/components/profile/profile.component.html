@@ -1,6 +1,17 @@
 <div *ngIf = "user" > 
     <h2 class = "page-header"> Welcome : {{user.name}}</h2>
-    <button class = "btn primary-btn"> <a [routerLink]="['/login']">Add Quote</a></button>
+
+<nav class="navbar navbar-default">
+  
+    <ul class="nav navbar-nav">
+      <li><a>Functions : </a></li>
+      <li><a [routerLink]="['/addQuote']" style="text-decoration : underline;">Add Quote</a></li>
+    </ul>
+  
+  </nav>
+
+
+
     <ul class = "list-group">
       <li class = "list-group-item">Username : {{user.username}}</li>
       <li class = "list-group-item">Email : {{user.email}}</li>

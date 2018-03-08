@@ -13,10 +13,13 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import {ValidateService} from './services/validate.service';
-import {FlashMessagesModule} from 'angular2-flash-messages';
-import {AuthService} from './services/auth.service';
 import { NewquoteComponent } from './components/newquote/newquote.component';
+import {ValidateService} from './services/validate.service';
+import {AuthService} from './services/auth.service';
+import {QuoteService} from './services/quote.service';
+import {FlashMessagesModule} from 'angular2-flash-messages';
+import { Quote } from '@angular/compiler';
+
 
 // the things inside the object is how the components are connected with the angular app
 const appRoutes: Routes = [
@@ -25,6 +28,7 @@ const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'dashboard', component: DashboardComponent},
   {path: 'profile', component: ProfileComponent}
+  {path: 'addQuote', component: NewquoteComponent}
 ];
 
 @NgModule({
@@ -45,7 +49,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FlashMessagesModule.forRoot()
   ],
-  providers: [ValidateService, AuthService],
+  providers: [ValidateService, AuthService, QuoteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
