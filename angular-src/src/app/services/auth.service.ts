@@ -42,16 +42,6 @@ export class AuthService {
       return this.http.get('http://localhost:3001/user/profile', {headers: headers}).map(res => res.json());
     }
 
-    // pass id from user of profile to show quotes posted by this user
-    getQuote(userid) {
-      const headers = new Headers();
-      //console.log(userid.id);
-      headers.append('Content-Type' , 'application/json' );
-      return this.http.post('http://localhost:3001/quote/returnQuotes', userid , {headers: headers}).map(res => res.json());
-    }
-
-
-
     storeUserData(token, user) {
       // save in local storage takes in key and value
       localStorage.setItem('id_token', token);
@@ -67,5 +57,20 @@ export class AuthService {
       this.user = null;
       localStorage.clear();
     }
+
+    // Quote functions
+    // pass id from user of profile to function to show quotes posted by this user
+    getQuote(userid) {
+      const headers = new Headers();
+      headers.append('Content-Type' , 'application/json' );
+      return this.http.post('http://localhost:3001/quote/returnQuotes', userid , {headers: headers}).map(res => res.json());
+    }
+
+        // pass id from user of profile to function remove quote posted by this user
+    removeQuote(deleteId) {
+          const headers = new Headers();
+          headers.append('Content-Type' , 'application/json' );
+          return this.http.post('http://localhost:3001/quote/removeQuote', deleteId , {headers: headers}).map(res => res.json());
+        }
 
 }

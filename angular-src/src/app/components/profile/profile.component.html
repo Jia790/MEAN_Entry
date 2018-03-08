@@ -7,10 +7,11 @@
     </ul>
   
   </div>
-  <button class = "btn primary-btn" (click)="showUserQuote()">Show Quotes</button>
+  <button class = "btn primary-btn" (click)="showUserQuote()">Show Quotes</button><br><br>
 
   <div *ngFor="let quoteItem of quotesList">
     <ul class ="list-group">
+      <button class = "secondary-btn" (click)="deleteUserQuote(quoteItem._id)">Delete Quotes</button>
         <li class = "list-group-item">Name : {{quoteItem.name}}</li>
         <li class = "list-group-item">Quote : {{quoteItem.quote}}</li>
     </ul>

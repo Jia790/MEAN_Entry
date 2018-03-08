@@ -35,9 +35,18 @@ const Quote = mongoose.model('quote', quoteSchema); // mongodb will make a "user
 module.exports = Quote;
 
 //functions
+
+//Get quotes from database based on provided id
 module.exports.getQuoteById = function(id, callback){
     const query = {userID: id};
     Quote.find(query,callback);
+
+}
+
+//Remove quotes fromd database based on provided id
+module.exports.removeQuoteById = function(id, callback){
+    const query = {_id: id};
+    Quote.findOneAndRemove(query,callback);
 
 }
 

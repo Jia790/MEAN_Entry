@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../services/auth.service';
 import {Router} from '@angular/router';
+import {FlashMessagesService} from 'angular2-flash-messages';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -13,7 +14,8 @@ export class ProfileComponent implements OnInit {
   quotesList: String[];
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private flashMessage: FlashMessagesService
   ) { }
 
   // load on init
@@ -39,6 +41,25 @@ export class ProfileComponent implements OnInit {
       // console.log(quote);
       this.quotesList = quote.quoteList.quote;
     });
+  }
+
+  // The function to delete a quote
+  deleteUserQuote(id) {
+    const deleteID = {id : id };
+    this.authService.removeQuote(deleteID).subscribe(removeQuote => {
+
+      if (removeQuote.success) {
+
+        this.flashMessage.show('Remove Success !', {cssClass: 'alert-success', timeout: 1000});
+        this.showUserQuote(); // reload array contain after deleting quotes
+
+      } else {
+        this.flashMessage.show(removeQuote.msg, {cssClass: 'alert-danger', timeout: 3000});
+        this.router.navigate(['/profile']);
+      }
+
+    });
+    console.log(id);
   }
 
 

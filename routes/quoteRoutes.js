@@ -29,6 +29,7 @@ router.get('/', function(req, res, next){
   });
 
 router.post('/returnQuotes', function(req, res, next){
+
   Quote.getQuoteById(req.body.id, function(err, quote){
     // console.log(req.body.id);
     if(err){
@@ -38,6 +39,23 @@ router.post('/returnQuotes', function(req, res, next){
 
     else{
       res.json({success: true, msg:'Successfully obtain quote', quoteList : {quote} } );
+      //res.redirect('/');
+    }
+  });
+
+});
+
+router.post('/removeQuote', function(req, res, next){
+  
+  Quote.removeQuoteById(req.body.id, function(err, quote){
+     console.log(req.body.id);
+    if(err){
+      console.log(err);
+      res.json({success: false, msg:'Failed to removed quote'});
+    }
+
+    else{
+      res.json({success: true, msg:'Successfully removed quote'} );
       //res.redirect('/');
     }
   });
