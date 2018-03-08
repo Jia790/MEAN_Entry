@@ -36,7 +36,8 @@ module.exports = Quote;
 
 //functions
 module.exports.getQuoteById = function(id, callback){
-    Quote.findById(id,callback);
+    const query = {userID: id};
+    Quote.find(query,callback);
 
 }
 

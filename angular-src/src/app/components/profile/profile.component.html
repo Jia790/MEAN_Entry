@@ -1,3 +1,20 @@
-<p>
-  profile works!
-</p>
+<div *ngIf = "user" > 
+    <h2 class = "page-header"> Welcome : {{user.name}}</h2>
+    <button class = "btn primary-btn"> <a [routerLink]="['/login']">Add Quote</a></button>
+    <ul class = "list-group">
+      <li class = "list-group-item">Username : {{user.username}}</li>
+      <li class = "list-group-item">Email : {{user.email}}</li>
+    </ul>
+  
+  </div>
+  <button class = "btn primary-btn" (click)="showUserQuote()">Show Quotes</button>
+
+  <div *ngFor="let quoteItem of quotesList">
+    <ul class ="list-group">
+        <li class = "list-group-item">name : {{quoteItem.name}}</li>
+        <li class = "list-group-item">quotes : {{quoteItem.quote}}</li>
+    </ul>
+
+  </div>
+
+  

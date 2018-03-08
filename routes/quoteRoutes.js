@@ -11,10 +11,38 @@ const Quote = require('../models/quoteSchema');
 
 //routes
 router.get('/', function(req, res, next){
-    
-    res.send('responds from quote\'s GET request');
+
+    Quote.getQuoteById(req.body.id, function(err, quote){
+      console.log(req.body.id);
+      if(err){
+        console.log(err);
+        res.json({success: false, msg:'Failed to get quote'});
+      }
+  
+      else{
+        res.json({success: true, msg:'Successfully obtain quote'});
+        //res.redirect('/');
+      }
+    });
+    // res.send('responds from quote\'s GET request');
   
   });
+
+router.post('/returnQuotes', function(req, res, next){
+  Quote.getQuoteById(req.body.id, function(err, quote){
+    // console.log(req.body.id);
+    if(err){
+      console.log(err);
+      res.json({success: false, msg:'Failed to get quote'});
+    }
+
+    else{
+      res.json({success: true, msg:'Successfully obtain quote', quoteList : {quote} } );
+      //res.redirect('/');
+    }
+  });
+
+});
 
 router.post('/add', function(req, res, next){
 
@@ -28,7 +56,9 @@ router.post('/add', function(req, res, next){
 
   });
 
-  Quote.addQuote(newQuote, function(err, user){
+
+
+  Quote.addQuote(newQuote, function(err, quote){
     if(err){
       console.log(err);
       res.json({success: false, msg:'Failed to register quote'});
