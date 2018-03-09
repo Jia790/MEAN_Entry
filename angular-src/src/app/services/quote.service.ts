@@ -19,8 +19,8 @@ export class QuoteService {
   }
 
   getQuote() {
-    console.log(this.userID); // proof of concept, preparing for migration to quote service file
-    const UID = {id : this.userID}; // proof of concept, preparing for migration to quote service file
+    // console.log(this.userID);
+    const UID = {id : this.userID};
     const headers = new Headers();
     headers.append('Content-Type' , 'application/json' );
     return this.http.post('http://localhost:3001/quote/returnQuotes', UID , {headers: headers}).map(res => res.json());
