@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ValidateService} from '../../services/validate.service';
 import {FlashMessagesService} from 'angular2-flash-messages';
 import {AuthService} from '../../services/auth.service';
+import {QuoteService} from '../../services/quote.service';
 import {Router} from '@angular/router'; // for redirection
 
 @Component({
@@ -20,6 +21,7 @@ export class NewquoteComponent implements OnInit {
     private validateService: ValidateService,
     private flashMessage: FlashMessagesService,
     private authService: AuthService,
+    private quoteService: QuoteService,
     private router: Router
   ) { }
 
@@ -31,9 +33,20 @@ export class NewquoteComponent implements OnInit {
     this.userID = this.userObj.id;
 
     const quote = {
-      userID: this.userID,
+      id: this.userID,
       name: this.name,
       quote: this.quote };
+
+      this.quoteService.addQuote(quote).subscribe(quoteInserted => {
+        if (quoteInserted.success) {
+
+          this.flashMessage.show('Quote Add Success !', {cssClass: 'alert-success', timeout: 1000});
+          this.router.navigate(['/profile']);
+        } else {
+          this.flashMessage.show(quoteInserted.msg, {cssClass: 'alert-danger', timeout: 3000});
+          this.router.navigate(['/addQuote']);
+        }
+      });
       // not done, did not add in app.module.ts yet
       // function is not complete
   }

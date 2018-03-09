@@ -52,7 +52,7 @@ module.exports.removeQuoteById = function(id, callback){
 
 module.exports.addQuote = function(newQuote, callback){
     
-            newQuote.save(callback);// save entry to database, and call passed in callback function 
+    newQuote.save(callback);// save entry to database, and call passed in callback function 
 
 }
 

@@ -11,6 +11,12 @@ export class QuoteService {
 
   constructor(private http: Http) { }
 
+  addQuote(quoteObj) {
+      const headers = new Headers();
+      headers.append('Content-Type' , 'application/json' );
+      return this.http.post('http://localhost:3001/quote/add', quoteObj, {headers: headers}).map(res => res.json());
+
+  }
 
   getQuote() {
     console.log(this.userID); // proof of concept, preparing for migration to quote service file
