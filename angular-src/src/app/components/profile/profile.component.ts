@@ -36,13 +36,14 @@ export class ProfileComponent implements OnInit {
 
   // quotes portion
   showUserQuote() {
-    this.userID = this.user._id;
-    //const userIDContainer = {
-      //id: this.userID };
     this.quoteService.getQuote().subscribe(quote => {
       // console.log(quote);
       this.quotesList = quote.quoteList.quote;
     });
+  }
+
+  hideQuote() {
+    this.quotesList = [];
   }
 
   // The function to delete a quote

@@ -1,7 +1,7 @@
 <div *ngIf = "user" > 
     <h2 class = "page-header"> Welcome : {{user.name}}</h2>
 
-<nav class="navbar navbar-default">
+  <nav class="navbar navbar-default">
   
     <ul class="nav navbar-nav">
       <li><a>Functions : </a></li>
@@ -10,15 +10,14 @@
   
   </nav>
 
-
-
     <ul class = "list-group">
       <li class = "list-group-item">Username : {{user.username}}</li>
       <li class = "list-group-item">Email : {{user.email}}</li>
     </ul>
-  
+    <button class = "btn btn-secondary" (click)="showUserQuote()">Show Quotes</button> 
+    <button class = "btn btn-secondary pull-right" (click)="hideQuote()">Hide Quotes</button><br><br>
   </div>
-  <button class = "btn primary-btn" (click)="showUserQuote()">Show Quotes</button><br><br>
+
 
   <div *ngFor="let quoteItem of quotesList">
     <ul class ="list-group">
