@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Http, Headers} from '@angular/http';
+import {tokenNotExpired} from 'angular2-jwt'; // used to check if there is a jwt token in the local storage
 // included to project result from observable ('post' is the observable in this case)
 import 'rxjs/add/operator/map';
 
@@ -55,5 +56,9 @@ export class AuthService {
       this.authToken = null;
       this.user = null;
       localStorage.clear();
+    }
+
+    loggedIn() {
+      return tokenNotExpired('id_token');
     }
 }

@@ -6,8 +6,8 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class QuoteService {
 
-  temp: any = JSON.parse(localStorage.getItem('user'));
-  userID: any = this.temp.id;
+  temp: any;
+  userID: any;
 
   constructor(private http: Http) { }
 
@@ -20,6 +20,8 @@ export class QuoteService {
 
   getQuote() {
     // console.log(this.userID);
+    this.temp  = JSON.parse(localStorage.getItem('user'));
+    this.userID = this.temp.id;
     const UID = {id : this.userID};
     const headers = new Headers();
     headers.append('Content-Type' , 'application/json' );
