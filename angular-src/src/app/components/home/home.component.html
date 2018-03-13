@@ -2,7 +2,7 @@
   <h1> MEAN Quote </h1>
   <p class = "lead">Welcome to MEAN Quote <br> a simple MEAN application</p>
   <div>
-    <a class = "btn btn-primary" [routerLink] = "['/register']">Register</a> <a class = "btn btn-default " [routerLink] = "['/login']">Login</a>
+    <a *ngIf=" !authService.loggedIn()" class = "btn btn-primary" [routerLink] = "['/register']">Register</a> <a *ngIf="!authService.loggedIn()" class = "btn btn-default " [routerLink] = "['/login']">Login</a>
   </div>
 </div>
     
