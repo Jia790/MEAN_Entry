@@ -1,5 +1,6 @@
 # MEAN_Quote
 A simple MEAN application that allows user to register and store quotes/articles/blog once logged in.
+ 
 
 That uses:
 
@@ -17,6 +18,12 @@ That uses:
 
 * Visuals of website
  * refer to link for images of the website
- * [Visuals](https://www.google.com "Visuals of Website")
- 
- ![alt text](https://github.com/Jia790/MEAN_Quote/tree/master/Image_of_site/HomePage.PNG)
+  * [Visuals](https://www.google.com "Visuals of Website")
+
+**Note: This app requires the use of all part of MEAN (MongDB, ExpressJS, Angular, NodeJS) and Angular-CLI.**
+
+Once all the required parts are downloaded and installed
+* Move to your root directory of your project in the terminal and type "npm install"
+* Move to **angular-src** and also type "npm install"
+* Make sure your MongDB and Node server is running in the background
+* To see the application go to (http://localhost:3001/)
