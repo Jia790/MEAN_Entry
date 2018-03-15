@@ -14,5 +14,7 @@ That uses:
 
 * WT Tokens
   * Authentication using JSON web tokens, for login and storage of user data
-  
-  [link text itself]: http://www.google.com
+
+* Visuals of website
+ * refer to link for images of the website
+ * (https://www.google.com "Visuals of Website")
