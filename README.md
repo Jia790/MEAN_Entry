@@ -17,4 +17,4 @@ That uses:
 
 * Visuals of website
  * refer to link for images of the website
-[I'm an inline-style link with title](https://www.google.com "Visuals of Website")
+ * [Visuals](https://www.google.com "Visuals of Website")
