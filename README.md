@@ -19,4 +19,4 @@ That uses:
  * refer to link for images of the website
  * [Visuals](https://www.google.com "Visuals of Website")
  
- https://github.com/Jia790/MEAN_Quote/tree/master/Image_of_site/HomePage.PNG
+ (https://github.com/Jia790/MEAN_Quote/tree/master/Image_of_site/HomePage.PNG)
