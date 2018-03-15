@@ -18,7 +18,7 @@ That uses:
 
 * Visuals of website
  * refer to link for images of the website
-  * [Visuals](https://www.google.com "Visuals of Website")
+  * [Visuals](https://github.com/Jia790/MEAN_Quote/tree/master/Image_of_site "Visuals of Website")
 
 **Note: This app requires the use of all parts of the MEAN stack (MongDB, ExpressJS, Angular, NodeJS) and Angular-CLI.**
 
