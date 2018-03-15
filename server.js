@@ -60,6 +60,11 @@ require('./config/passport')(passport); //using passport.js
 app.use('/user', require('./routes/userRoutes'));
 app.use('/quote', require('./routes/quoteRoutes'));
 
+//send all other not vaild path to homepage
+app.get('*', function (req,res) {
+    res.redirect('/');
+  });
+
 app.listen(port, function(){
     console.log("server started on port " + port);
 })

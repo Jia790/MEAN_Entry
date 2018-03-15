@@ -19,6 +19,8 @@ import {AuthService} from './services/auth.service';
 import {QuoteService} from './services/quote.service';
 import {FlashMessagesModule} from 'angular2-flash-messages';
 import { Quote } from '@angular/compiler';
+// for auth guard to prevent access to certain pages when not logged in
+import {AuthGuard} from './guards/auth.guard';
 
 
 // the things inside the object is how the components are connected with the angular app
@@ -26,9 +28,10 @@ const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'dashboard', component: DashboardComponent},
-  {path: 'profile', component: ProfileComponent},
-  {path: 'addQuote', component: NewquoteComponent}
+  {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
+  // by adding canActivate: [AuthGuard] it will only activate the link if AuthGuard returns true
+  {path: 'addQuote', component: NewquoteComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({
@@ -49,7 +52,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FlashMessagesModule.forRoot()
   ],
-  providers: [ValidateService, AuthService, QuoteService],
+  providers: [ValidateService, AuthService, QuoteService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
