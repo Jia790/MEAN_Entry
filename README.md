@@ -4,16 +4,16 @@ A simple MEAN application that allows user to register and store quotes/articles
 
 That uses:
 
-* Express Backend
+* **Express Backend**
 
   * Using NodeJS/Express, Mongoose, for the backend of this application. Mongoose is used to organize models and query the database of MongoDB
 
 
-* Angular-CLI
+* **Angular-CLI**
 
   * Uses Angular-CLI to generate components, services and more
 
-* WT Tokens
+* **WT Tokens**
   * Authentication using JSON web tokens, for login and storage of user data
 
 * Visuals of website
