@@ -20,7 +20,7 @@ That uses:
  * refer to link for images of the website
   * [Visuals](https://www.google.com "Visuals of Website")
 
-**Note: This app requires the use of all part of MEAN (MongDB, ExpressJS, Angular, NodeJS) and Angular-CLI.**
+**Note: This app requires the use of all parts of the MEAN stack (MongDB, ExpressJS, Angular, NodeJS) and Angular-CLI.**
 
 Once all the required parts are downloaded and installed
 * Move to your root directory of your project in the terminal and type "npm install"
