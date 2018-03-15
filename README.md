@@ -1,5 +1,5 @@
 # MEAN_Quote
-A simple MEAN application
+A simple MEAN application that allows user to register and store quotes/articles/blog once logged in.
 
 That uses:
 
@@ -14,3 +14,5 @@ That uses:
 
 * WT Tokens
   * Authentication using JSON web tokens, for login and storage of user data
+  
+  [link text itself]: http://www.google.com
