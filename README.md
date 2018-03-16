@@ -1,7 +1,9 @@
 # MEAN_Quote
+ * [Live Version] (https://murmuring-shore-68486.herokuapp.com/)
+ 
 A simple MEAN application that allows user to register and store quotes/articles/blog once logged in.
  
-
+ 
 This app uses the following:
 
 * **Express Backend**
