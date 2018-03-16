@@ -2,7 +2,7 @@
 A simple MEAN application that allows user to register and store quotes/articles/blog once logged in.
  
 
-That uses:
+This app uses:
 
 * **Express Backend**
 
