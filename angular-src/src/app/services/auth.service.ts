@@ -12,6 +12,7 @@ export class AuthService {
 
   constructor(private http: Http) { }
 
+    // Note !: for deploying to Heroku, delete "http://localhost:3001/" from all request
     registerUser(user) {
       const headers = new Headers();
       headers.append('Content-Type' , 'application/json' );

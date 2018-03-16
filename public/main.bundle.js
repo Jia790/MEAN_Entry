@@ -780,6 +780,7 @@ var AuthService = /** @class */ (function () {
     function AuthService(http) {
         this.http = http;
     }
+    // Note !: for deploying to Heroku, delete "http://localhost:3001/" from all request
     AuthService.prototype.registerUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
@@ -856,6 +857,7 @@ var QuoteService = /** @class */ (function () {
     function QuoteService(http) {
         this.http = http;
     }
+    // Note !: for deploying to Heroku, delete "http://localhost:3001/" from all request
     QuoteService.prototype.addQuote = function (quoteObj) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');

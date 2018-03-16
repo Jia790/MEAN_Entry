@@ -33,6 +33,8 @@ mongoose.connection.on('error', function(err){
 const app = express();
 const port = 3001;
 
+// This is for deploying on heroku
+//const port = process.env.PORT || 8080;
 
 
 // set mongoose's Promise to Node.js's Promise

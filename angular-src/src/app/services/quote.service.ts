@@ -11,6 +11,7 @@ export class QuoteService {
 
   constructor(private http: Http) { }
 
+  // Note !: for deploying to Heroku, delete "http://localhost:3001/" from all request
   addQuote(quoteObj) {
       const headers = new Headers();
       headers.append('Content-Type' , 'application/json' );
