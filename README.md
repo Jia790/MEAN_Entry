@@ -1,5 +1,5 @@
-# MEAN_Quote
- * [Live Version](https://murmuring-shore-68486.herokuapp.com/)
+# MEAN_Quote ( [Live Version](https://murmuring-shore-68486.herokuapp.com/) ) 
+ 
  
 A simple MEAN application that allows user to register and store quotes/articles/blog once logged in.
  
