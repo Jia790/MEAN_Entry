@@ -15,7 +15,7 @@ export class QuoteService {
   addQuote(quoteObj) {
       const headers = new Headers();
       headers.append('Content-Type' , 'application/json' );
-      return this.http.post('http://localhost:3001/quote/add', quoteObj, {headers: headers}).map(res => res.json());
+      return this.http.post('quote/add', quoteObj, {headers: headers}).map(res => res.json());
 
   }
 
@@ -26,14 +26,14 @@ export class QuoteService {
     const UID = {id : this.userID};
     const headers = new Headers();
     headers.append('Content-Type' , 'application/json' );
-    return this.http.post('http://localhost:3001/quote/returnQuotes', UID , {headers: headers}).map(res => res.json());
+    return this.http.post('quote/returnQuotes', UID , {headers: headers}).map(res => res.json());
   }
 
       // pass id from user of profile to function remove quote posted by this user
   removeQuote(deleteId) {
         const headers = new Headers();
         headers.append('Content-Type' , 'application/json' );
-        return this.http.post('http://localhost:3001/quote/removeQuote', deleteId , {headers: headers}).map(res => res.json());
+        return this.http.post('quote/removeQuote', deleteId , {headers: headers}).map(res => res.json());
       }
 
 }
