@@ -16,14 +16,14 @@ export class AuthService {
     registerUser(user) {
       const headers = new Headers();
       headers.append('Content-Type' , 'application/json' );
-      return this.http.post('user/register', user, {headers: headers}).map(res => res.json());
+      return this.http.post('http://localhost:3001/user/register', user, {headers: headers}).map(res => res.json());
 
     }
 
     authenticateUser(user) {
       const headers = new Headers();
       headers.append('Content-Type' , 'application/json' );
-      return this.http.post('user/authenticate', user, {headers: headers}).map(res => res.json());
+      return this.http.post('http://localhost:3001/user/authenticate', user, {headers: headers}).map(res => res.json());
     }
 
 
@@ -40,7 +40,7 @@ export class AuthService {
       this.loadToken(); // get the token from local storage
       headers.append('Authorization', this.authToken); // send token to endpoint for authorization
       headers.append('Content-Type' , 'application/json' );
-      return this.http.get('user/profile', {headers: headers}).map(res => res.json());
+      return this.http.get('http://localhost:3001/user/profile', {headers: headers}).map(res => res.json());
     }
 
     storeUserData(token, user) {
