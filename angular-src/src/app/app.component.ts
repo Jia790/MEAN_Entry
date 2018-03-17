@@ -7,5 +7,5 @@ import { Component } from '@angular/core'; // bring in main angular page
 })
 export class AppComponent { // main component class
   // property
-  title = 'MEAN Quote';
+  title = 'MEAN Entry';
 }

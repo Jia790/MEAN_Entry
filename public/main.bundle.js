@@ -27,7 +27,7 @@ module.exports = ""
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<div style=\"text-align:center\">\n  <h1>\n    {{ title }}!\n  </h1>\n  <!--<img width=\"300\" alt=\"Angular Logo\" src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==\">-->\n</div>\n<app-navbar></app-navbar>\n\n<div class = \"container\">\n  <flash-messages></flash-messages>\n  <router-outlet></router-outlet>\n\n</div>\n\n"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<div style=\"text-align:center\">\n  <h1>\n    {{ title }}\n  </h1>\n  <!--<img width=\"300\" alt=\"Angular Logo\" src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==\">-->\n</div>\n<app-navbar></app-navbar>\n\n<div class = \"container\">\n  <flash-messages></flash-messages>\n  <router-outlet></router-outlet>\n\n</div>\n\n"
 
 /***/ }),
 
@@ -47,7 +47,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
         // property
-        this.title = 'MEAN Quote';
+        this.title = 'MEAN Entry';
     }
     AppComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -224,7 +224,7 @@ module.exports = "\r\n"
 /***/ "./src/app/components/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class = \"jumbotron text-center\">\n  <h1> MEAN Quote </h1>\n  <p class = \"lead\">Welcome to MEAN Quote <br> a simple MEAN application</p>\n  <div>\n    <a *ngIf=\" !authService.loggedIn()\" class = \"btn btn-primary\" [routerLink] = \"['/register']\">Register</a> <a *ngIf=\"!authService.loggedIn()\" class = \"btn btn-default \" [routerLink] = \"['/login']\">Login</a>\n  </div>\n</div>\n    \n    \n<div class = \"row\"> \n  <div class = \"col-md-4\">\n    <h3>Express Backend</h3>\n    <p>Using NodeJS/Express, Mongoose, for the backend of this application. Mongoose is used to organize models and query the database of MongoDB</p>\n  </div>\n  <div class = \"col-md-4\">\n      <h3>Angular-CLI</h3>\n      <p>Uses Angular-CLI to generate components, services and more </p>\n  </div>\n  <div class = \"col-md-4\">\n      <h3>JWT Tokens</h3>\n      <p> Authentication using JSON web tokens, for login and storage of user data</p>\n  </div>\n</div>  \n"
+module.exports = "<div class = \"jumbotron text-center\">\n  <h1> MEAN Entry </h1>\n  <p class = \"lead\">Welcome to MEAN Entry <br> a simple MEAN application</p>\n  <div>\n    <a *ngIf=\" !authService.loggedIn()\" class = \"btn btn-primary\" [routerLink] = \"['/register']\">Register</a> <a *ngIf=\"!authService.loggedIn()\" class = \"btn btn-default \" [routerLink] = \"['/login']\">Login</a>\n  </div>\n</div>\n    \n    \n<div class = \"row\"> \n  <div class = \"col-md-4\">\n    <h3>Express Backend</h3>\n    <p>Using NodeJS/Express, Mongoose, for the backend of this application. Mongoose is used to organize models and query the database of MongoDB</p>\n  </div>\n  <div class = \"col-md-4\">\n      <h3>Angular-CLI</h3>\n      <p>Uses Angular-CLI to generate components, services and more </p>\n  </div>\n  <div class = \"col-md-4\">\n      <h3>JWT Tokens</h3>\n      <p> Authentication using JSON web tokens, for login and storage of user data</p>\n  </div>\n</div>  \n"
 
 /***/ }),
 
@@ -357,7 +357,7 @@ module.exports = ""
 /***/ "./src/app/components/navbar/navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n        <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\">\n          <span class=\"sr-only\">Toggle navigation</span>\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>\n        </button>\n        <a class=\"navbar-brand\" [routerLink]=\"['/']\">MEAN Quote</a>\n      </div>\n      <div id=\"navbar\" class=\"collapse navbar-collapse\">\n        <ul class=\"nav navbar-nav navbar-left\">\n          <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/']\">Home</a></li>\n          <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/dashboard']\">Dashboard</a></li>\n          <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/profile']\">Profile</a></li>\n        </ul>\n\n        <ul class=\"nav navbar-nav navbar-right\">\n          <!--Normally, \"a\" tags have href but in the case of the MEAN app, we replaced it with \"[something]\" -->\n          <!-- the right of the \"=\" is also \"[something]\" -->\n          <!--In addition when using bootstrap, \"li\" tags can be set to active or not with nav-itm active, -->\n          <!-- but in this case, we replaced it with \"[routerLinkActive] = \"['acitve']\" -->\n          <!--The \"[]\" items are imported form @angular/router -->\n          \n\n          <li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/register']\">Register</a></li>\n          <li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/login']\">Login</a></li>\n          \n          <li *ngIf =\"authService.loggedIn()\"><a href=\"#\" (click) = \"onLogoutClick()\">Logout</a></li>\n            \n        </ul>\n      </div><!--/.nav-collapse -->\n    </div>\n  </nav>\n"
+module.exports = "<nav class=\"navbar navbar-default\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n        <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\">\n          <span class=\"sr-only\">Toggle navigation</span>\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>\n        </button>\n        <a class=\"navbar-brand\" [routerLink]=\"['/']\">MEAN Entry</a>\n      </div>\n      <div id=\"navbar\" class=\"collapse navbar-collapse\">\n        <ul class=\"nav navbar-nav navbar-left\">\n          <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/']\">Home</a></li>\n          <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/dashboard']\">Dashboard</a></li>\n          <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/profile']\">Profile</a></li>\n        </ul>\n\n        <ul class=\"nav navbar-nav navbar-right\">\n          <!--Normally, \"a\" tags have href but in the case of the MEAN app, we replaced it with \"[something]\" -->\n          <!-- the right of the \"=\" is also \"[something]\" -->\n          <!--In addition when using bootstrap, \"li\" tags can be set to active or not with nav-itm active, -->\n          <!-- but in this case, we replaced it with \"[routerLinkActive] = \"['acitve']\" -->\n          <!--The \"[]\" items are imported form @angular/router -->\n          \n\n          <li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/register']\">Register</a></li>\n          <li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/login']\">Login</a></li>\n          \n          <li *ngIf =\"authService.loggedIn()\"><a href=\"#\" (click) = \"onLogoutClick()\">Logout</a></li>\n            \n        </ul>\n      </div><!--/.nav-collapse -->\n    </div>\n  </nav>\n"
 
 /***/ }),
 
@@ -425,7 +425,7 @@ module.exports = ""
 /***/ "./src/app/components/newquote/newquote.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2 class = \"page-header\">Add Quote</h2>\n<form (submit) = \"onQuoteSubmit()\">  \n  <div class =\"form-group\">\n    <label>Name</label>\n    <input type =\"text\" [(ngModel)] = \"name\" name = \"name\" class = \"form-control\">\n  </div>\n  <div class =\"form-group\">\n    <label>Quote</label>\n    <input type =\"text\" [(ngModel)] = \"quote\" name = \"quote\" class = \"form-control\">\n  </div>\n  <input type = \"submit\" class = \"btn btn-primary\" value = \"Submit\">\n</form>\n"
+module.exports = "<h2 class = \"page-header\">Add Entry</h2>\n<form (submit) = \"onQuoteSubmit()\">  \n  <div class =\"form-group\">\n    <label>Title</label>\n    <input type =\"text\" [(ngModel)] = \"name\" name = \"name\" class = \"form-control\">\n  </div>\n  <div class =\"form-group\">\n    <label>Entry</label>\n    <!-- <input type =\"text\" [(ngModel)] = \"quote\" name = \"quote\" class = \"form-control\"> -->\n    <textarea [(ngModel)] = \"quote\" name = \"quote\" class = \"form-control\"> </textarea>\n  </div>\n  <input type = \"submit\" class = \"btn btn-primary\" value = \"Submit\">\n</form>\n"
 
 /***/ }),
 
@@ -517,7 +517,7 @@ module.exports = ".profileMainDiv {\r\n    padding-bottom : 20px\r\n}\r\n\r\n"
 /***/ "./src/app/components/profile/profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf = \"user\" class = \"profileMainDiv\"> \n    <h2 class = \"page-header\"> Welcome : {{user.name}}</h2>\n\n  <nav class=\"navbar navbar-default\">\n  \n    <ul class=\"nav navbar-nav\">\n      <li><a>Functions : </a></li>\n      <li><a [routerLink]=\"['/addQuote']\" style=\"text-decoration : underline;\">Add Quote</a></li>\n    </ul>\n  \n  </nav>\n\n    <ul class = \"list-group\">\n      <li class = \"list-group-item\">Username : {{user.username}}</li>\n      <li class = \"list-group-item\">Email : {{user.email}}</li>\n    </ul>\n    <button class = \"btn btn-secondary\" (click)=\"showUserQuote()\">Show Quotes</button> \n    <button class = \"btn btn-secondary pull-right\" (click)=\"hideQuote()\">Hide Quotes</button>\n  </div>\n\n\n  <div *ngFor=\"let quoteItem of quotesList\">\n    <ul class =\"list-group\">\n      <button class = \"secondary-btn\" (click)=\"deleteUserQuote(quoteItem._id)\">Delete Quote</button>\n        <li class = \"list-group-item \">Name : {{quoteItem.name}}</li>\n        <li class = \"list-group-item\">Quote : {{quoteItem.quote}}</li>\n    </ul>\n\n  </div>\n\n  \n"
+module.exports = "<div *ngIf = \"user\" class = \"profileMainDiv\"> \n    <h2 class = \"page-header\"> Welcome : {{user.name}}</h2>\n\n  <nav class=\"navbar navbar-default\">\n  \n    <ul class=\"nav navbar-nav\">\n      <li><a>Functions : </a></li>\n      <li><a [routerLink]=\"['/addQuote']\" style=\"text-decoration : underline;\">Add Entry</a></li>\n    </ul>\n  \n  </nav>\n\n    <ul class = \"list-group\">\n      <li class = \"list-group-item\">Username : {{user.username}}</li>\n      <li class = \"list-group-item\">Email : {{user.email}}</li>\n    </ul>\n    <button class = \"btn btn-secondary\" (click)=\"showUserQuote()\">Show Entries</button> \n    <button class = \"btn btn-secondary pull-right\" (click)=\"hideQuote()\">Hide Entries</button>\n  </div>\n\n\n  <div *ngFor=\"let quoteItem of quotesList\">\n    <ul class =\"list-group\">\n      <button class = \"secondary-btn\" (click)=\"deleteUserQuote(quoteItem._id)\">Delete Entry</button>\n        <li class = \"list-group-item \">Title : {{quoteItem.name}}</li>\n        <li class = \"list-group-item\">Entry : {{quoteItem.quote}}</li>\n    </ul>\n\n  </div>\n\n  \n"
 
 /***/ }),
 
@@ -784,12 +784,12 @@ var AuthService = /** @class */ (function () {
     AuthService.prototype.registerUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('user/register', user, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post('http://localhost:3001/user/register', user, { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.authenticateUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('user/authenticate', user, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post('http://localhost:3001/user/authenticate', user, { headers: headers }).map(function (res) { return res.json(); });
     };
     // get token to show user is allowed to view restricted pages
     AuthService.prototype.loadToken = function () {
@@ -802,7 +802,7 @@ var AuthService = /** @class */ (function () {
         this.loadToken(); // get the token from local storage
         headers.append('Authorization', this.authToken); // send token to endpoint for authorization
         headers.append('Content-Type', 'application/json');
-        return this.http.get('user/profile', { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.get('http://localhost:3001/user/profile', { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.storeUserData = function (token, user) {
         // save in local storage takes in key and value
@@ -861,7 +861,7 @@ var QuoteService = /** @class */ (function () {
     QuoteService.prototype.addQuote = function (quoteObj) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('quote/add', quoteObj, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post('http://localhost:3001/quote/add', quoteObj, { headers: headers }).map(function (res) { return res.json(); });
     };
     QuoteService.prototype.getQuote = function () {
         // console.log(this.userID);
@@ -870,13 +870,13 @@ var QuoteService = /** @class */ (function () {
         var UID = { id: this.userID };
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('quote/returnQuotes', UID, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post('http://localhost:3001/quote/returnQuotes', UID, { headers: headers }).map(function (res) { return res.json(); });
     };
     // pass id from user of profile to function remove quote posted by this user
     QuoteService.prototype.removeQuote = function (deleteId) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('quote/removeQuote', deleteId, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post('http://localhost:3001/quote/removeQuote', deleteId, { headers: headers }).map(function (res) { return res.json(); });
     };
     QuoteService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),

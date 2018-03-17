@@ -1,12 +1,13 @@
-<h2 class = "page-header">Add Quote</h2>
+<h2 class = "page-header">Add Entry</h2>
 <form (submit) = "onQuoteSubmit()">  
   <div class ="form-group">
-    <label>Name</label>
+    <label>Title</label>
     <input type ="text" [(ngModel)] = "name" name = "name" class = "form-control">
   </div>
   <div class ="form-group">
-    <label>Quote</label>
-    <input type ="text" [(ngModel)] = "quote" name = "quote" class = "form-control">
+    <label>Entry</label>
+    <!-- <input type ="text" [(ngModel)] = "quote" name = "quote" class = "form-control"> -->
+    <textarea [(ngModel)] = "quote" name = "quote" class = "form-control"> </textarea>
   </div>
   <input type = "submit" class = "btn btn-primary" value = "Submit">
 </form>
