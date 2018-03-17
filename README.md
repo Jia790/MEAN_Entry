@@ -19,8 +19,8 @@ This app uses the following:
   * Authentication using JSON web tokens, for login and storage of user data
 
 * Visuals of website
- * Refer to link for images of the website
-  * [Visuals](https://github.com/Jia790/MEAN_Quote/tree/master/Image_of_site "Visuals of Website")
+	* Refer to link for images of the website
+  	* [Visuals](https://github.com/Jia790/MEAN_Quote/tree/master/Image_of_site "Visuals of Website")
 
 **Note: This app requires the use of all parts of the MEAN stack (MongDB, ExpressJS, Angular, NodeJS) and Angular-CLI.**
 
