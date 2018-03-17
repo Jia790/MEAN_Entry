@@ -80,10 +80,10 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__ = __webpack_require__("./src/app/components/home/home.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_dashboard_dashboard_component__ = __webpack_require__("./src/app/components/dashboard/dashboard.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_profile_profile_component__ = __webpack_require__("./src/app/components/profile/profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_newquote_newquote_component__ = __webpack_require__("./src/app/components/newquote/newquote.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_newentry_newentry_component__ = __webpack_require__("./src/app/components/newentry/newentry.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_validate_service__ = __webpack_require__("./src/app/services/validate.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_quote_service__ = __webpack_require__("./src/app/services/quote.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_entry_service__ = __webpack_require__("./src/app/services/entry.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_angular2_flash_messages__ = __webpack_require__("./node_modules/angular2-flash-messages/module/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16_angular2_flash_messages__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__ = __webpack_require__("./src/app/guards/auth.guard.ts");
@@ -120,7 +120,7 @@ var appRoutes = [
     { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_10__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */]] },
     { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_11__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */]] },
     // by adding canActivate: [AuthGuard] it will only activate the link if AuthGuard returns true
-    { path: 'addQuote', component: __WEBPACK_IMPORTED_MODULE_12__components_newquote_newquote_component__["a" /* NewquoteComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */]] }
+    { path: 'addEntry', component: __WEBPACK_IMPORTED_MODULE_12__components_newentry_newentry_component__["a" /* NewentryComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */]] }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -135,7 +135,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__["a" /* HomeComponent */],
                 __WEBPACK_IMPORTED_MODULE_10__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
                 __WEBPACK_IMPORTED_MODULE_11__components_profile_profile_component__["a" /* ProfileComponent */],
-                __WEBPACK_IMPORTED_MODULE_12__components_newquote_newquote_component__["a" /* NewquoteComponent */]
+                __WEBPACK_IMPORTED_MODULE_12__components_newentry_newentry_component__["a" /* NewentryComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -144,7 +144,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* RouterModule */].forRoot(appRoutes),
                 __WEBPACK_IMPORTED_MODULE_16_angular2_flash_messages__["FlashMessagesModule"].forRoot()
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_13__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_14__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_15__services_quote_service__["a" /* QuoteService */], __WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */]],
+            providers: [__WEBPACK_IMPORTED_MODULE_13__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_14__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_15__services_entry_service__["a" /* EntryService */], __WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */]],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
@@ -415,31 +415,31 @@ var NavbarComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/components/newquote/newquote.component.css":
+/***/ "./src/app/components/newentry/newentry.component.css":
 /***/ (function(module, exports) {
 
 module.exports = ""
 
 /***/ }),
 
-/***/ "./src/app/components/newquote/newquote.component.html":
+/***/ "./src/app/components/newentry/newentry.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2 class = \"page-header\">Add Entry</h2>\n<form (submit) = \"onQuoteSubmit()\">  \n  <div class =\"form-group\">\n    <label>Title</label>\n    <input type =\"text\" [(ngModel)] = \"name\" name = \"name\" class = \"form-control\">\n  </div>\n  <div class =\"form-group\">\n    <label>Entry</label>\n    <!-- <input type =\"text\" [(ngModel)] = \"quote\" name = \"quote\" class = \"form-control\"> -->\n    <textarea [(ngModel)] = \"quote\" name = \"quote\" class = \"form-control\"> </textarea>\n  </div>\n  <input type = \"submit\" class = \"btn btn-primary\" value = \"Submit\">\n</form>\n"
+module.exports = "<h2 class = \"page-header\">Add Entry</h2>\n<form (submit) = \"onEntrySubmit()\">  \n  <div class =\"form-group\">\n    <label>Title</label>\n    <input type =\"text\" [(ngModel)] = \"name\" name = \"name\" class = \"form-control\">\n  </div>\n  <div class =\"form-group\">\n    <label>Entry</label>\n    <!-- <input type =\"text\" [(ngModel)] = \"quote\" name = \"quote\" class = \"form-control\"> -->\n    <textarea [(ngModel)] = \"entry\" name = \"entry\" class = \"form-control\"> </textarea>\n  </div>\n  <input type = \"submit\" class = \"btn btn-primary\" value = \"Submit\">\n</form>\n"
 
 /***/ }),
 
-/***/ "./src/app/components/newquote/newquote.component.ts":
+/***/ "./src/app/components/newentry/newentry.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NewquoteComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NewentryComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_validate_service__ = __webpack_require__("./src/app/services/validate.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__ = __webpack_require__("./node_modules/angular2-flash-messages/module/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_quote_service__ = __webpack_require__("./src/app/services/quote.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_entry_service__ = __webpack_require__("./src/app/services/entry.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -456,51 +456,51 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
  // for redirection
-var NewquoteComponent = /** @class */ (function () {
-    function NewquoteComponent(validateService, flashMessage, authService, quoteService, router) {
+var NewentryComponent = /** @class */ (function () {
+    function NewentryComponent(validateService, flashMessage, authService, entryService, router) {
         this.validateService = validateService;
         this.flashMessage = flashMessage;
         this.authService = authService;
-        this.quoteService = quoteService;
+        this.entryService = entryService;
         this.router = router;
     }
-    NewquoteComponent.prototype.ngOnInit = function () {
+    NewentryComponent.prototype.ngOnInit = function () {
     };
-    NewquoteComponent.prototype.onQuoteSubmit = function () {
+    NewentryComponent.prototype.onEntrySubmit = function () {
         var _this = this;
         this.userObj = JSON.parse(localStorage.getItem('user'));
         this.userID = this.userObj.id;
-        var quote = {
+        var entry = {
             id: this.userID,
             name: this.name,
-            quote: this.quote
+            entry: this.entry
         };
-        this.quoteService.addQuote(quote).subscribe(function (quoteInserted) {
-            if (quoteInserted.success) {
-                _this.flashMessage.show('Quote Add Success !', { cssClass: 'alert-success', timeout: 1000 });
+        this.entryService.addEntry(entry).subscribe(function (entryInserted) {
+            if (entryInserted.success) {
+                _this.flashMessage.show('Entry Add Success !', { cssClass: 'alert-success', timeout: 1000 });
                 _this.router.navigate(['/profile']);
             }
             else {
-                _this.flashMessage.show(quoteInserted.msg, { cssClass: 'alert-danger', timeout: 3000 });
-                _this.router.navigate(['/addQuote']);
+                _this.flashMessage.show(entryInserted.msg, { cssClass: 'alert-danger', timeout: 3000 });
+                _this.router.navigate(['/addEntry']);
             }
         });
         // not done, did not add in app.module.ts yet
         // function is not complete
     };
-    NewquoteComponent = __decorate([
+    NewentryComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'app-newquote',
-            template: __webpack_require__("./src/app/components/newquote/newquote.component.html"),
-            styles: [__webpack_require__("./src/app/components/newquote/newquote.component.css")]
+            selector: 'app-entry',
+            template: __webpack_require__("./src/app/components/newentry/newentry.component.html"),
+            styles: [__webpack_require__("./src/app/components/newentry/newentry.component.css")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_validate_service__["a" /* ValidateService */],
             __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"],
             __WEBPACK_IMPORTED_MODULE_3__services_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_4__services_quote_service__["a" /* QuoteService */],
+            __WEBPACK_IMPORTED_MODULE_4__services_entry_service__["a" /* EntryService */],
             __WEBPACK_IMPORTED_MODULE_5__angular_router__["a" /* Router */]])
-    ], NewquoteComponent);
-    return NewquoteComponent;
+    ], NewentryComponent);
+    return NewentryComponent;
 }());
 
 
@@ -517,7 +517,7 @@ module.exports = ".profileMainDiv {\r\n    padding-bottom : 20px\r\n}\r\n\r\n"
 /***/ "./src/app/components/profile/profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf = \"user\" class = \"profileMainDiv\"> \n    <h2 class = \"page-header\"> Welcome : {{user.name}}</h2>\n\n  <nav class=\"navbar navbar-default\">\n  \n    <ul class=\"nav navbar-nav\">\n      <li><a>Functions : </a></li>\n      <li><a [routerLink]=\"['/addQuote']\" style=\"text-decoration : underline;\">Add Entry</a></li>\n    </ul>\n  \n  </nav>\n\n    <ul class = \"list-group\">\n      <li class = \"list-group-item\">Username : {{user.username}}</li>\n      <li class = \"list-group-item\">Email : {{user.email}}</li>\n    </ul>\n    <button class = \"btn btn-secondary\" (click)=\"showUserQuote()\">Show Entries</button> \n    <button class = \"btn btn-secondary pull-right\" (click)=\"hideQuote()\">Hide Entries</button>\n  </div>\n\n\n  <div *ngFor=\"let quoteItem of quotesList\">\n    <ul class =\"list-group\">\n      <button class = \"secondary-btn\" (click)=\"deleteUserQuote(quoteItem._id)\">Delete Entry</button>\n        <li class = \"list-group-item \">Title : {{quoteItem.name}}</li>\n        <li class = \"list-group-item\">Entry : {{quoteItem.quote}}</li>\n    </ul>\n\n  </div>\n\n  \n"
+module.exports = "<div *ngIf = \"user\" class = \"profileMainDiv\"> \n    <h2 class = \"page-header\"> Welcome : {{user.name}}</h2>\n\n  <nav class=\"navbar navbar-default\">\n  \n    <ul class=\"nav navbar-nav\">\n      <li><a>Functions : </a></li>\n      <li><a [routerLink]=\"['/addEntry']\" style=\"text-decoration : underline;\">Add Entry</a></li>\n    </ul>\n  \n  </nav>\n\n    <ul class = \"list-group\">\n      <li class = \"list-group-item\">Username : {{user.username}}</li>\n      <li class = \"list-group-item\">Email : {{user.email}}</li>\n    </ul>\n    <button class = \"btn btn-secondary\" (click)=\"showUserEntry()\">Show Entries</button> \n    <button class = \"btn btn-secondary pull-right\" (click)=\"hideEntry()\">Hide Entries</button>\n  </div>\n\n\n  <div *ngFor=\"let entryItem of entryList\">\n    <ul class =\"list-group\">\n      <button class = \"secondary-btn\" (click)=\"deleteUserEntry(entryItem._id)\">Delete Entry</button>\n        <li class = \"list-group-item \">Title : {{entryItem.name}}</li>\n        <li class = \"list-group-item\">Entry : {{entryItem.entry}}</li>\n    </ul>\n\n  </div>\n\n  \n"
 
 /***/ }),
 
@@ -531,7 +531,7 @@ module.exports = "<div *ngIf = \"user\" class = \"profileMainDiv\"> \n    <h2 cl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__ = __webpack_require__("./node_modules/angular2-flash-messages/module/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_quote_service__ = __webpack_require__("./src/app/services/quote.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_entry_service__ = __webpack_require__("./src/app/services/entry.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -547,10 +547,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var ProfileComponent = /** @class */ (function () {
-    function ProfileComponent(authService, router, quoteService, flashMessage) {
+    function ProfileComponent(authService, router, entryService, flashMessage) {
         this.authService = authService;
         this.router = router;
-        this.quoteService = quoteService;
+        this.entryService = entryService;
         this.flashMessage = flashMessage;
     }
     // load on init
@@ -564,27 +564,27 @@ var ProfileComponent = /** @class */ (function () {
         });
     };
     // quotes portion
-    ProfileComponent.prototype.showUserQuote = function () {
+    ProfileComponent.prototype.showUserEntry = function () {
         var _this = this;
-        this.quoteService.getQuote().subscribe(function (quote) {
+        this.entryService.getEntry().subscribe(function (entry) {
             // console.log(quote);
-            _this.quotesList = quote.quoteList.quote;
+            _this.entryList = entry.entryList.entry;
         });
     };
-    ProfileComponent.prototype.hideQuote = function () {
-        this.quotesList = [];
+    ProfileComponent.prototype.hideEntry = function () {
+        this.entryList = [];
     };
     // The function to delete a quote
-    ProfileComponent.prototype.deleteUserQuote = function (id) {
+    ProfileComponent.prototype.deleteUserEntry = function (id) {
         var _this = this;
         var deleteID = { id: id };
-        this.quoteService.removeQuote(deleteID).subscribe(function (removeQuote) {
-            if (removeQuote.success) {
+        this.entryService.removeEntry(deleteID).subscribe(function (removeEntry) {
+            if (removeEntry.success) {
                 _this.flashMessage.show('Remove Success !', { cssClass: 'alert-success', timeout: 1000 });
-                _this.showUserQuote(); // reload array contain after deleting quotes
+                _this.showUserEntry(); // reload array contain after deleting quotes
             }
             else {
-                _this.flashMessage.show(removeQuote.msg, { cssClass: 'alert-danger', timeout: 3000 });
+                _this.flashMessage.show(removeEntry.msg, { cssClass: 'alert-danger', timeout: 3000 });
                 _this.router.navigate(['/profile']);
             }
         });
@@ -598,7 +598,7 @@ var ProfileComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */],
-            __WEBPACK_IMPORTED_MODULE_4__services_quote_service__["a" /* QuoteService */],
+            __WEBPACK_IMPORTED_MODULE_4__services_entry_service__["a" /* EntryService */],
             __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]])
     ], ProfileComponent);
     return ProfileComponent;
@@ -784,12 +784,12 @@ var AuthService = /** @class */ (function () {
     AuthService.prototype.registerUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('user/register', user, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post('http://localhost:3001/user/register', user, { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.authenticateUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('user/authenticate', user, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post('http://localhost:3001/user/authenticate', user, { headers: headers }).map(function (res) { return res.json(); });
     };
     // get token to show user is allowed to view restricted pages
     AuthService.prototype.loadToken = function () {
@@ -802,7 +802,7 @@ var AuthService = /** @class */ (function () {
         this.loadToken(); // get the token from local storage
         headers.append('Authorization', this.authToken); // send token to endpoint for authorization
         headers.append('Content-Type', 'application/json');
-        return this.http.get('user/profile', { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.get('http://localhost:3001/user/profile', { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.storeUserData = function (token, user) {
         // save in local storage takes in key and value
@@ -832,11 +832,11 @@ var AuthService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/services/quote.service.ts":
+/***/ "./src/app/services/entry.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return QuoteService; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EntryService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("./node_modules/@angular/http/esm5/http.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/map.js");
@@ -853,36 +853,36 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 // included to project result from observable ('post' is the observable in this case)
 
-var QuoteService = /** @class */ (function () {
-    function QuoteService(http) {
+var EntryService = /** @class */ (function () {
+    function EntryService(http) {
         this.http = http;
     }
     // Note !: for deploying to Heroku, delete "http://localhost:3001/" from all request
-    QuoteService.prototype.addQuote = function (quoteObj) {
+    EntryService.prototype.addEntry = function (entryObj) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('quote/add', quoteObj, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post('http://localhost:3001/entry/add', entryObj, { headers: headers }).map(function (res) { return res.json(); });
     };
-    QuoteService.prototype.getQuote = function () {
+    EntryService.prototype.getEntry = function () {
         // console.log(this.userID);
         this.temp = JSON.parse(localStorage.getItem('user'));
         this.userID = this.temp.id;
         var UID = { id: this.userID };
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('quote/returnQuotes', UID, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post('http://localhost:3001/entry/returnEntries', UID, { headers: headers }).map(function (res) { return res.json(); });
     };
     // pass id from user of profile to function remove quote posted by this user
-    QuoteService.prototype.removeQuote = function (deleteId) {
+    EntryService.prototype.removeEntry = function (deleteId) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('quote/removeQuote', deleteId, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post('http://localhost:3001/entry//removeEntry', deleteId, { headers: headers }).map(function (res) { return res.json(); });
     };
-    QuoteService = __decorate([
+    EntryService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]])
-    ], QuoteService);
-    return QuoteService;
+    ], EntryService);
+    return EntryService;
 }());
 
 

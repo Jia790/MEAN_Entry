@@ -5,7 +5,7 @@
   
     <ul class="nav navbar-nav">
       <li><a>Functions : </a></li>
-      <li><a [routerLink]="['/addQuote']" style="text-decoration : underline;">Add Entry</a></li>
+      <li><a [routerLink]="['/addEntry']" style="text-decoration : underline;">Add Entry</a></li>
     </ul>
   
   </nav>
@@ -14,16 +14,16 @@
       <li class = "list-group-item">Username : {{user.username}}</li>
       <li class = "list-group-item">Email : {{user.email}}</li>
     </ul>
-    <button class = "btn btn-secondary" (click)="showUserQuote()">Show Entries</button> 
-    <button class = "btn btn-secondary pull-right" (click)="hideQuote()">Hide Entries</button>
+    <button class = "btn btn-secondary" (click)="showUserEntry()">Show Entries</button> 
+    <button class = "btn btn-secondary pull-right" (click)="hideEntry()">Hide Entries</button>
   </div>
 
 
-  <div *ngFor="let quoteItem of quotesList">
+  <div *ngFor="let entryItem of entryList">
     <ul class ="list-group">
-      <button class = "secondary-btn" (click)="deleteUserQuote(quoteItem._id)">Delete Entry</button>
-        <li class = "list-group-item ">Title : {{quoteItem.name}}</li>
-        <li class = "list-group-item">Entry : {{quoteItem.quote}}</li>
+      <button class = "secondary-btn" (click)="deleteUserEntry(entryItem._id)">Delete Entry</button>
+        <li class = "list-group-item ">Title : {{entryItem.name}}</li>
+        <li class = "list-group-item">Entry : {{entryItem.entry}}</li>
     </ul>
 
   </div>

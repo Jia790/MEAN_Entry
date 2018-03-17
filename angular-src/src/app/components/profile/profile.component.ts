@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../services/auth.service';
 import {Router} from '@angular/router';
 import {FlashMessagesService} from 'angular2-flash-messages';
-import {QuoteService} from '../../services/quote.service';
+import {EntryService} from '../../services/entry.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -12,11 +12,11 @@ export class ProfileComponent implements OnInit {
 
   user: any;
   userID: String;
-  quotesList: String[];
+  entryList: String[];
   constructor(
     private authService: AuthService,
     private router: Router,
-    private quoteService: QuoteService,
+    private entryService: EntryService,
     private flashMessage: FlashMessagesService
   ) { }
 
@@ -35,29 +35,29 @@ export class ProfileComponent implements OnInit {
   }
 
   // quotes portion
-  showUserQuote() {
-    this.quoteService.getQuote().subscribe(quote => {
+  showUserEntry() {
+    this.entryService.getEntry().subscribe(entry => {
       // console.log(quote);
-      this.quotesList = quote.quoteList.quote;
+      this.entryList = entry.entryList.entry;
     });
   }
 
-  hideQuote() {
-    this.quotesList = [];
+  hideEntry() {
+    this.entryList = [];
   }
 
   // The function to delete a quote
-  deleteUserQuote(id) {
+  deleteUserEntry(id) {
     const deleteID = {id : id };
-    this.quoteService.removeQuote(deleteID).subscribe(removeQuote => {
+    this.entryService.removeEntry(deleteID).subscribe(removeEntry => {
 
-      if (removeQuote.success) {
+      if (removeEntry.success) {
 
         this.flashMessage.show('Remove Success !', {cssClass: 'alert-success', timeout: 1000});
-        this.showUserQuote(); // reload array contain after deleting quotes
+        this.showUserEntry(); // reload array contain after deleting quotes
 
       } else {
-        this.flashMessage.show(removeQuote.msg, {cssClass: 'alert-danger', timeout: 3000});
+        this.flashMessage.show(removeEntry.msg, {cssClass: 'alert-danger', timeout: 3000});
         this.router.navigate(['/profile']);
       }
 

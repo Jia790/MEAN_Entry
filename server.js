@@ -31,10 +31,10 @@ mongoose.connection.on('error', function(err){
 
 //set up express app
 const app = express();
-const port = 3001;
+//const port = 3001;
 
 // This is for deploying on heroku
-//const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8080;
 
 
 // set mongoose's Promise to Node.js's Promise
@@ -60,7 +60,7 @@ require('./config/passport')(passport); //using passport.js
 
 //use created routes from userRoutes.js
 app.use('/user', require('./routes/userRoutes'));
-app.use('/quote', require('./routes/quoteRoutes'));
+app.use('/entry', require('./routes/entryRoutes')); //look here
 
 //send all other not vaild path to homepage
 app.get('*', function (req,res) {

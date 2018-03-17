@@ -13,10 +13,10 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { NewquoteComponent } from './components/newquote/newquote.component';
+import { NewentryComponent } from './components/newentry/newentry.component';
 import {ValidateService} from './services/validate.service';
 import {AuthService} from './services/auth.service';
-import {QuoteService} from './services/quote.service';
+import {EntryService} from './services/entry.service';
 import {FlashMessagesModule} from 'angular2-flash-messages';
 import { Quote } from '@angular/compiler';
 // for auth guard to prevent access to certain pages when not logged in
@@ -31,7 +31,7 @@ const appRoutes: Routes = [
   {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
   // by adding canActivate: [AuthGuard] it will only activate the link if AuthGuard returns true
-  {path: 'addQuote', component: NewquoteComponent, canActivate: [AuthGuard]}
+  {path: 'addEntry', component: NewentryComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({
@@ -43,7 +43,7 @@ const appRoutes: Routes = [
     HomeComponent,
     DashboardComponent,
     ProfileComponent,
-    NewquoteComponent
+    NewentryComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +52,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FlashMessagesModule.forRoot()
   ],
-  providers: [ValidateService, AuthService, QuoteService, AuthGuard],
+  providers: [ValidateService, AuthService, EntryService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
