@@ -1,0 +1,13 @@
+<h2 class = "page-header">Add Entry</h2>
+<form (submit) = "onEntrySubmit()">  
+  <div class ="form-group">
+    <label>Title</label>
+    <input type ="text" [(ngModel)] = "name" name = "name" class = "form-control">
+  </div>
+  <div class ="form-group">
+    <label>Entry</label>
+    <!-- <input type ="text" [(ngModel)] = "quote" name = "quote" class = "form-control"> -->
+    <textarea [(ngModel)] = "entry" name = "entry" class = "form-control"> </textarea>
+  </div>
+  <input type = "submit" class = "btn btn-primary" value = "Submit">
+</form>
