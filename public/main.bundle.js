@@ -588,7 +588,7 @@ var ProfileComponent = /** @class */ (function () {
                 _this.router.navigate(['/profile']);
             }
         });
-        console.log(id);
+        // console.log(id);
     };
     ProfileComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -784,12 +784,12 @@ var AuthService = /** @class */ (function () {
     AuthService.prototype.registerUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('user/register', user, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post('http://localhost:3001/user/register', user, { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.authenticateUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('user/authenticate', user, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post('http://localhost:3001/user/authenticate', user, { headers: headers }).map(function (res) { return res.json(); });
     };
     // get token to show user is allowed to view restricted pages
     AuthService.prototype.loadToken = function () {
@@ -802,7 +802,7 @@ var AuthService = /** @class */ (function () {
         this.loadToken(); // get the token from local storage
         headers.append('Authorization', this.authToken); // send token to endpoint for authorization
         headers.append('Content-Type', 'application/json');
-        return this.http.get('user/profile', { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.get('http://localhost:3001/user/profile', { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.storeUserData = function (token, user) {
         // save in local storage takes in key and value
@@ -861,8 +861,9 @@ var EntryService = /** @class */ (function () {
     EntryService.prototype.addEntry = function (entryObj) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('entry/add', entryObj, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post('http://localhost:3001/entry/add', entryObj, { headers: headers }).map(function (res) { return res.json(); });
     };
+    // POST version of get entries
     EntryService.prototype.getEntry = function () {
         // console.log(this.userID);
         this.temp = JSON.parse(localStorage.getItem('user'));
@@ -870,13 +871,24 @@ var EntryService = /** @class */ (function () {
         var UID = { id: this.userID };
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('entry/returnEntries', UID, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post('http://localhost:3001/entry/returnEntries', UID, { headers: headers }).map(function (res) { return res.json(); });
     };
+    // GET version of get entries
+    /*
+     getEntry() {
+       // console.log(this.userID);
+       this.temp  = JSON.parse(localStorage.getItem('user'));
+       this.userID = this.temp.id;
+       const UID =  this.userID;
+       const headers = new Headers();
+       headers.append('Content-Type' , 'application/json' );
+       return this.http.get('http://localhost:3001/entry/returnEntries?id=' + UID , {headers: headers}).map(res => res.json());
+     } */
     // pass id from user of profile to function remove quote posted by this user
     EntryService.prototype.removeEntry = function (deleteId) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('entry//removeEntry', deleteId, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post('http://localhost:3001/entry/removeEntry', deleteId, { headers: headers }).map(function (res) { return res.json(); });
     };
     EntryService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),

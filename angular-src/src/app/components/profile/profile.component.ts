@@ -62,7 +62,7 @@ export class ProfileComponent implements OnInit {
       }
 
     });
-    console.log(id);
+    // console.log(id);
   }
 
 

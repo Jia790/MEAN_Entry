@@ -10,24 +10,26 @@ const Entrys = require('../models/entrySchema');
 
 
 //routes
-router.get('/', function(req, res, next){
 
-    Entrys.getEntryById(req.body.id, function(err, entry){
-      console.log(req.body.id);
+// GET version of getting entries
+/*router.get('/returnEntries', function(req, res, next){
+
+    Entrys.getEntryById(req.query.id, function(err, entry){
+      //console.log(req.query.id);
       if(err){
         console.log(err);
         res.json({success: false, msg:'Failed to get quote'});
       }
   
       else{
-        res.json({success: true, msg:'Successfully obtain quote'});
+        res.json({success: true, msg:'Successfully obtain quote', entryList : {entry} });
         //res.redirect('/');
       }
     });
-    // res.send('responds from quote\'s GET request');
   
-  });
+  });*/
 
+  // POST version of getting entries
 router.post('/returnEntries', function(req, res, next){
 
   Entrys.getEntryById(req.body.id, function(err, entry){

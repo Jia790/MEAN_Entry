@@ -19,6 +19,8 @@ export class EntryService {
 
   }
 
+// POST version of get entries
+
   getEntry() {
     // console.log(this.userID);
     this.temp  = JSON.parse(localStorage.getItem('user'));
@@ -29,11 +31,23 @@ export class EntryService {
     return this.http.post('http://localhost:3001/entry/returnEntries', UID , {headers: headers}).map(res => res.json());
   }
 
+ // GET version of get entries
+ /*
+  getEntry() {
+    // console.log(this.userID);
+    this.temp  = JSON.parse(localStorage.getItem('user'));
+    this.userID = this.temp.id;
+    const UID =  this.userID;
+    const headers = new Headers();
+    headers.append('Content-Type' , 'application/json' );
+    return this.http.get('http://localhost:3001/entry/returnEntries?id=' + UID , {headers: headers}).map(res => res.json());
+  } */
+
       // pass id from user of profile to function remove quote posted by this user
   removeEntry(deleteId) {
         const headers = new Headers();
         headers.append('Content-Type' , 'application/json' );
-        return this.http.post('http://localhost:3001/entry//removeEntry', deleteId , {headers: headers}).map(res => res.json());
+        return this.http.post('http://localhost:3001/entry/removeEntry', deleteId , {headers: headers}).map(res => res.json());
       }
 
 }
