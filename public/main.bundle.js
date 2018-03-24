@@ -224,7 +224,7 @@ module.exports = "\r\n"
 /***/ "./src/app/components/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class = \"jumbotron text-center\">\n  <h1> MEAN Entry </h1>\n  <p class = \"lead\">Welcome to MEAN Entry <br> a simple MEAN application</p>\n  <div>\n    <a *ngIf=\" !authService.loggedIn()\" class = \"btn btn-primary\" [routerLink] = \"['/register']\">Register</a> <a *ngIf=\"!authService.loggedIn()\" class = \"btn btn-default \" [routerLink] = \"['/login']\">Login</a>\n  </div>\n</div>\n    \n    \n<div class = \"row\"> \n  <div class = \"col-md-4\">\n    <h3>Express Backend</h3>\n    <p>Using NodeJS/Express, Mongoose, for the backend of this application. Mongoose is used to organize models and query the database of MongoDB</p>\n  </div>\n  <div class = \"col-md-4\">\n      <h3>Angular-CLI</h3>\n      <p>Uses Angular-CLI to generate components, services and more </p>\n  </div>\n  <div class = \"col-md-4\">\n      <h3>JWT Tokens</h3>\n      <p> Authentication using JSON web tokens, for login and storage of user data</p>\n  </div>\n</div>  \n"
+module.exports = "<div class = \"jumbotron text-center\">\n  <h1> MEAN Entry </h1>\n  <p class = \"lead\">Welcome to MEAN Entry <br> A simple MEAN application</p>\n  <div>\n    <a *ngIf=\" !authService.loggedIn()\" class = \"btn btn-default \" style=\"background : rgb(95, 52, 205); \" [routerLink] = \"['/register']\">Register</a> <a *ngIf=\"!authService.loggedIn()\" class = \"btn btn-default \" [routerLink] = \"['/login']\">Login</a>\n  </div>\n</div>\n    \n    \n<div class = \"row\"> \n  <div class = \"col-md-4\">\n    <h3>Express Backend</h3>\n    <p>Using NodeJS/Express, Mongoose, for the backend of this application. Mongoose is used to organize models and query the database of MongoDB</p>\n  </div>\n  <div class = \"col-md-4\">\n      <h3>Angular-CLI</h3>\n      <p>Uses Angular-CLI to generate components, services and more </p>\n  </div>\n  <div class = \"col-md-4\">\n      <h3>JWT Tokens</h3>\n      <p> Authentication using JSON web tokens, for login and storage of user data</p>\n  </div>\n</div>  \n"
 
 /***/ }),
 
@@ -277,7 +277,7 @@ module.exports = ""
 /***/ "./src/app/components/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2 class = \"page-header\">Login</h2>\n<form (submit) = \"onLoginSubmit()\">\n  <div class = \"form-group\">\n    <label>Username</label>\n    <input type = \"text\" [(ngModel)] = \"username\" name = \"username\" class = \"form-control\" >\n  </div>\n  <div class = \"form-group\">\n      <label>Password</label>\n      <input type = \"password\" [(ngModel)] = \"password\" name = \"password\" class = \"form-control\" >\n  </div>\n  <input type = \"submit\" class = \"btn btn-primary\" value = \"Login\">\n</form>  \n"
+module.exports = "<h2 class = \"page-header\">Login</h2>\n<form (submit) = \"onLoginSubmit()\">\n  <div class = \"form-group\">\n    <label>Username</label>\n    <input type = \"text\" [(ngModel)] = \"username\" name = \"username\" class = \"form-control\" >\n  </div>\n  <div class = \"form-group\">\n      <label>Password</label>\n      <input type = \"password\" [(ngModel)] = \"password\" name = \"password\" class = \"form-control\" >\n  </div>\n  <input type = \"submit\" class = \"btn btn-default\" style=\"background : rgb(95, 52, 205); \" value = \"Login\">\n</form>  \n"
 
 /***/ }),
 
@@ -618,7 +618,7 @@ module.exports = ""
 /***/ "./src/app/components/register/register.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2 class = \"page-header\">Register</h2>\n<form (submit) = \"onRegisterSubmit()\">  \n  <div class =\"form-group\">\n    <label>Name</label>\n    <input type =\"text\" [(ngModel)] = \"name\" name = \"name\" class = \"form-control\">\n  </div>\n  <div class =\"form-group\">\n    <label>Username</label>\n    <input type =\"text\" [(ngModel)] = \"username\" name = \"username\" class = \"form-control\">\n  </div>\n  <div class =\"form-group\">\n    <label>Password</label>\n    <input type =\"password\" [(ngModel)] = \"password\" name = \"password\" class = \"form-control\">\n  </div>\n  <div class =\"form-group\">\n    <label>Email</label>\n    <input type =\"text\" [(ngModel)] = \"email\" name = \"email\" class = \"form-control\">\n  </div>\n  \n  <input type = \"submit\" class = \"btn btn-primary\" value = \"Submit\">\n</form>"
+module.exports = "<h2 class = \"page-header\">Register</h2>\n<form (submit) = \"onRegisterSubmit()\">  \n  <div class =\"form-group\">\n    <label>Name</label>\n    <input type =\"text\" [(ngModel)] = \"name\" name = \"name\" class = \"form-control\">\n  </div>\n  <div class =\"form-group\">\n    <label>Username</label>\n    <input type =\"text\" [(ngModel)] = \"username\" name = \"username\" class = \"form-control\">\n  </div>\n  <div class =\"form-group\">\n    <label>Password</label>\n    <input type =\"password\" [(ngModel)] = \"password\" name = \"password\" class = \"form-control\">\n  </div>\n  <div class =\"form-group\">\n    <label>Email</label>\n    <input type =\"text\" [(ngModel)] = \"email\" name = \"email\" class = \"form-control\">\n  </div>\n  \n  <input type = \"submit\" class = \"btn btn-default\" style=\"background : rgb(95, 52, 205); \" value = \"Submit\">\n</form>"
 
 /***/ }),
 
@@ -784,12 +784,12 @@ var AuthService = /** @class */ (function () {
     AuthService.prototype.registerUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('http://localhost:3001/user/register', user, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post('user/register', user, { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.authenticateUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('http://localhost:3001/user/authenticate', user, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post('user/authenticate', user, { headers: headers }).map(function (res) { return res.json(); });
     };
     // get token to show user is allowed to view restricted pages
     AuthService.prototype.loadToken = function () {
@@ -802,7 +802,7 @@ var AuthService = /** @class */ (function () {
         this.loadToken(); // get the token from local storage
         headers.append('Authorization', this.authToken); // send token to endpoint for authorization
         headers.append('Content-Type', 'application/json');
-        return this.http.get('http://localhost:3001/user/profile', { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.get('user/profile', { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.storeUserData = function (token, user) {
         // save in local storage takes in key and value
@@ -861,7 +861,7 @@ var EntryService = /** @class */ (function () {
     EntryService.prototype.addEntry = function (entryObj) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('http://localhost:3001/entry/add', entryObj, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post('entry/add', entryObj, { headers: headers }).map(function (res) { return res.json(); });
     };
     // POST version of get entries
     EntryService.prototype.getEntry = function () {
@@ -871,7 +871,7 @@ var EntryService = /** @class */ (function () {
         var UID = { id: this.userID };
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('http://localhost:3001/entry/returnEntries', UID, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post('entry/returnEntries', UID, { headers: headers }).map(function (res) { return res.json(); });
     };
     // GET version of get entries
     /*
@@ -888,7 +888,7 @@ var EntryService = /** @class */ (function () {
     EntryService.prototype.removeEntry = function (deleteId) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('http://localhost:3001/entry/removeEntry', deleteId, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post('entry/removeEntry', deleteId, { headers: headers }).map(function (res) { return res.json(); });
     };
     EntryService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),

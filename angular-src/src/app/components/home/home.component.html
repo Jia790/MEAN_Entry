@@ -1,8 +1,8 @@
 <div class = "jumbotron text-center">
   <h1> MEAN Entry </h1>
-  <p class = "lead">Welcome to MEAN Entry <br> a simple MEAN application</p>
+  <p class = "lead">Welcome to MEAN Entry <br> A simple MEAN application</p>
   <div>
-    <a *ngIf=" !authService.loggedIn()" class = "btn btn-primary" [routerLink] = "['/register']">Register</a> <a *ngIf="!authService.loggedIn()" class = "btn btn-default " [routerLink] = "['/login']">Login</a>
+    <a *ngIf=" !authService.loggedIn()" class = "btn btn-default " style="background : rgb(95, 52, 205); " [routerLink] = "['/register']">Register</a> <a *ngIf="!authService.loggedIn()" class = "btn btn-default " [routerLink] = "['/login']">Login</a>
   </div>
 </div>
     

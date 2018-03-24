@@ -12,12 +12,12 @@ const entrySchema = new Schema({
     },
     name : {
         type: String,
-        required: [true, 'Username field is required']
+        required: [true, 'Name field is required']
     },
 
     entry : {
         type: String,
-        required: [true, 'Password field is required']
+        required: [true, 'Entry field is required']
     }
 
 
