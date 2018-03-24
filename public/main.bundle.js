@@ -425,7 +425,7 @@ module.exports = ""
 /***/ "./src/app/components/newentry/newentry.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2 class = \"page-header\">Add Entry</h2>\n<form (submit) = \"onEntrySubmit()\">  \n  <div class =\"form-group\">\n    <label>Title</label>\n    <input type =\"text\" [(ngModel)] = \"name\" name = \"name\" class = \"form-control\">\n  </div>\n  <div class =\"form-group\">\n    <label>Entry</label>\n    <!-- <input type =\"text\" [(ngModel)] = \"quote\" name = \"quote\" class = \"form-control\"> -->\n    <textarea [(ngModel)] = \"entry\" name = \"entry\" class = \"form-control\"> </textarea>\n  </div>\n  <input type = \"submit\" class = \"btn btn-primary\" value = \"Submit\">\n</form>\n"
+module.exports = "<h2 class = \"page-header\">Add Entry</h2>\n<form (submit) = \"onEntrySubmit()\">  \n  <div class =\"form-group\">\n    <label>Title</label>\n    <input type =\"text\" [(ngModel)] = \"name\" name = \"name\" class = \"form-control\">\n  </div>\n  <div class =\"form-group\">\n    <label>Entry</label>\n    <!-- <input type =\"text\" [(ngModel)] = \"quote\" name = \"quote\" class = \"form-control\"> -->\n    <textarea [(ngModel)] = \"entry\" name = \"entry\" class = \"form-control\"> </textarea>\n  </div>\n  <input type = \"submit\" class = \"btn btn-default\" style=\"background : rgb(95, 52, 205);\" value = \"Submit\">\n</form>\n"
 
 /***/ }),
 
