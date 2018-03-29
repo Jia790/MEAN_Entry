@@ -16,6 +16,7 @@ export class RegisterComponent implements OnInit {
   username: String;
   password: String;
   email: String;
+  canRegister: boolean;
 
   // injecting imports
   constructor(
@@ -37,7 +38,7 @@ export class RegisterComponent implements OnInit {
 
       // required fields
     if (!this.validateService.validateRegister(user)) {
-      this.flashMessage.show('please fill out all fields ', {cssClass: 'alert-danger', timeout: 3000});
+      this.flashMessage.show('Please fill out all fields ', {cssClass: 'alert-danger', timeout: 3000});
       return false;
     }
 
@@ -47,17 +48,30 @@ export class RegisterComponent implements OnInit {
       return false;
     }
 
+    // check for already exisiting username
+    this.authService.canUseName(user).subscribe(data => {
+      if (!data.success) {
+        this.flashMessage.show(data.msg, {cssClass: 'alert-danger', timeout: 3000});
+        this.canRegister = false;
+        return false;
+      } else { this.canRegister = true; }
+    });
+
     // Register User
+
+ if (this.canRegister) {
     this.authService.registerUser(user).subscribe(data => {
       if (data.success) {
         this.flashMessage.show('Registration complete ! ', {cssClass: 'alert-success', timeout: 3000});
         this.router.navigate(['/login']);
 
       } else {
-        this.flashMessage.show('Something went wrong ', {cssClass: 'alert-danger', timeout: 3000});
+        this.flashMessage.show(data.msg, {cssClass: 'alert-danger', timeout: 3000});
         this.router.navigate(['/register']);
       }
     });
   }
+
+}
 
 }

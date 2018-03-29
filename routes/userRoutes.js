@@ -43,6 +43,21 @@ router.post('/register', function(req, res, next){
   });
 });
 
+
+//Check if username is already in use
+router.post('/canUseName', function(req, res, next){
+  const userName = req.body.username;
+  User.getByUserName(userName, function (err, user) {
+    if (err) throw err;
+    if(!user){
+      res.json({success: true, msg: 'Username has not been used yet'});
+    }
+    else{
+      res.json({success: false, msg: 'Username is already in use'});
+    }
+  });
+});
+
 //Authentication
 router.post('/authenticate', function(req, res, next){
 

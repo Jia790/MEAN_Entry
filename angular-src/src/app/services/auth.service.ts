@@ -26,6 +26,12 @@ export class AuthService {
       return this.http.post('http://localhost:3001/user/authenticate', user, {headers: headers}).map(res => res.json());
     }
 
+    canUseName(user) {
+      const headers = new Headers();
+      headers.append('Content-Type', 'application/json' );
+      return this.http.post('http://localhost:3001/user/canUseName', user, {headers: headers}).map(res => res.json());
+
+    }
 
 
     // get token to show user is allowed to view restricted pages
