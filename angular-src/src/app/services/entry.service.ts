@@ -15,7 +15,7 @@ export class EntryService {
   addEntry(entryObj) {
       const headers = new Headers();
       headers.append('Content-Type' , 'application/json' );
-      return this.http.post('http://localhost:3001/entry/add', entryObj, {headers: headers}).map(res => res.json());
+      return this.http.post('entry/add', entryObj, {headers: headers}).map(res => res.json());
 
   }
 
@@ -28,7 +28,7 @@ export class EntryService {
     const UID = {id : this.userID};
     const headers = new Headers();
     headers.append('Content-Type' , 'application/json' );
-    return this.http.post('http://localhost:3001/entry/returnEntries', UID , {headers: headers}).map(res => res.json());
+    return this.http.post('entry/returnEntries', UID , {headers: headers}).map(res => res.json());
   }
 
  // GET version of get entries
@@ -47,7 +47,7 @@ export class EntryService {
   removeEntry(deleteId) {
         const headers = new Headers();
         headers.append('Content-Type' , 'application/json' );
-        return this.http.post('http://localhost:3001/entry/removeEntry', deleteId , {headers: headers}).map(res => res.json());
+        return this.http.post('entry/removeEntry', deleteId , {headers: headers}).map(res => res.json());
       }
 
 }

@@ -45,6 +45,7 @@ router.post('/register', function(req, res, next){
 
 
 //Check if username is already in use
+
 router.post('/canUseName', function(req, res, next){
   const userName = req.body.username;
   User.getByUserName(userName, function (err, user) {
