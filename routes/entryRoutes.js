@@ -22,7 +22,7 @@ const Entrys = require('../models/entrySchema');
       }
   
       else{
-        res.json({success: true, msg:'Successfully obtain quote', entryList : {entry} });
+        res.json({success: true, msg:'Successfully obtain quote', entryList : entry });
         //res.redirect('/');
       }
     });
@@ -40,7 +40,7 @@ router.post('/returnEntries', function(req, res, next){
     }
 
     else{
-      res.json({success: true, msg:'Successfully obtain entry', entryList : {entry} } );
+      res.json({success: true, msg:'Successfully obtain entry', entryList : entry } );
       //res.redirect('/');
     }
   });

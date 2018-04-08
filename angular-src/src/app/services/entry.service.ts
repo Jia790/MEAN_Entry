@@ -15,7 +15,7 @@ export class EntryService {
   addEntry(entryObj) {
       const headers = new Headers();
       headers.append('Content-Type' , 'application/json' );
-      return this.http.post('entry/add', entryObj, {headers: headers}).map(res => res.json());
+      return this.http.post('http://localhost:3001/entry/add', entryObj, {headers: headers}).map(res => res.json());
 
   }
 

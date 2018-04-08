@@ -38,7 +38,7 @@ export class ProfileComponent implements OnInit {
   showUserEntry() {
     this.entryService.getEntry().subscribe(entry => {
       // console.log(quote);
-      this.entryList = entry.entryList.entry;
+      this.entryList = entry.entryList;
     });
   }
 
