@@ -22,7 +22,7 @@
     "passport-jwt": "^3.0.1"
   },
   "devDependencies": {
-    "@angular/cli": "^1.7.0",
+    "@angular/cli": "^14.2.8",
     "nodemon": "^1.14.12"
   }
 }
